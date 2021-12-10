@@ -82,3 +82,45 @@ This endpoint retrieves a single NFT in a collection.
 | --------- | ------------------------------------ |
 | Address   | The collection to retrieve NFTs from |
 | ID        | The NFT ID To retrieve               |
+
+## Get trading history for Specific NFT
+
+```javascript
+const axios = require("axios");
+
+let { data: nfts } = await axios("api");
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Fluffums",
+    "breed": "calico",
+    "fluffiness": 6,
+    "cuteness": 7
+  },
+  {
+    "id": 2,
+    "name": "Max",
+    "breed": "unknown",
+    "fluffiness": 5,
+    "cuteness": 10
+  }
+]
+```
+
+This endpoint retrieves transfer history of a single NFT.
+
+### HTTP Request
+
+`GET http://example.com/transfers/:address/:id `
+
+### URL Parameters
+
+| Parameter | Description                         |
+| --------- | ----------------------------------- |
+| Address   | The NFT collection to retrieve from |
+| ID        | The NFT ID To retrieve              |
