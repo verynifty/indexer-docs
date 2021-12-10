@@ -5,7 +5,7 @@
 ```javascript
 const axios = require("axios");
 
-let collections = axios("api").then((data) => data);
+let { data: collections } = await axios("api");
 ```
 
 > The above command returns JSON structured like this:
@@ -51,7 +51,7 @@ Remember — a happy kitten is an authenticated kitten!
 ```javascript
 const axios = require("axios");
 
-// /collection/:address
+let { data: collection } = await axios("api");
 ```
 
 > The above command returns JSON structured like this:

@@ -1,6 +1,10 @@
 # Unique header generation
 require './lib/unique_head.rb'
 
+# custom sets
+
+set :api_url, "https://google.com"
+
 # Markdown
 set :markdown_engine, :redcarpet
 set :markdown,
