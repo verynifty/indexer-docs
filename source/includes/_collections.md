@@ -72,7 +72,7 @@ This endpoint retrieves a specific collection.
 
 ### HTTP Request
 
-`GET http://example.com/collection/:address/<ID>`
+`GET http://example.com/collection/:address/`
 
 ### URL Parameters
 
