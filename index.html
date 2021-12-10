@@ -335,6 +335,9 @@
                   <li>
                     <a href="#get-a-specific-nft" class="toc-h2 toc-link" data-title="Get a specific NFT">Get a specific NFT</a>
                   </li>
+                  <li>
+                    <a href="#get-trading-history-for-specific-nft" class="toc-h2 toc-link" data-title="Get trading history for Specific NFT">Get trading history for Specific NFT</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -421,7 +424,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/collection/:address/&lt;ID&gt;</code></p>
+<p><code>GET http://example.com/collection/:address/</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -510,6 +513,49 @@ Remember — a happy kitten is an authenticated kitten!
 <tr>
 <td>Address</td>
 <td>The collection to retrieve NFTs from</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>The NFT ID To retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-trading-history-for-specific-nft'>Get trading history for Specific NFT</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span><span class="dl">"</span><span class="s2">api</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves transfer history of a single NFT.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET http://example.com/transfers/:address/:id</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Address</td>
+<td>The NFT collection to retrieve from</td>
 </tr>
 <tr>
 <td>ID</td>
