@@ -425,7 +425,7 @@
 </span></code></pre></div>
 <p>This endpoint retrieves all collections.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/collections</code></p>
+<p><code>GET https://nft-data.vercel.app/collections</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -451,24 +451,76 @@ Remember — a happy kitten is an authenticated kitten!
 </aside>
 <h2 id='get-a-specific-colletction'>Get a Specific colletction</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">collection</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span><span class="dl">"</span><span class="s2">api</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">collection</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">https://nft-data.vercel.app/collection/:address/</span><span class="dl">"</span>
+<span class="p">);</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Flipmap"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"FLIP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"default_image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x0e4b8e24789630618aa90072f520711d3d9db647/1700"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"slug"</span><span class="p">:</span><span class="s2">"flipmap"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"decimals"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_block_seen"</span><span class="p">:</span><span class="s2">"13920922"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="mi">721</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x0000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-01T17:41:04.864Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nft_data_base_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nft_image_base_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'flip':2B 'flipmap':1A,3C"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_total"</span><span class="p">:</span><span class="s2">"11043"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_hour"</span><span class="p">:</span><span class="s2">"9989"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_today"</span><span class="p">:</span><span class="s2">"11043"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_week"</span><span class="p">:</span><span class="s2">"11043"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_total"</span><span class="p">:</span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_hour"</span><span class="p">:</span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_today"</span><span class="p">:</span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_week"</span><span class="p">:</span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_hour"</span><span class="p">:</span><span class="s2">"7259"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_today"</span><span class="p">:</span><span class="s2">"8300"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_week"</span><span class="p">:</span><span class="s2">"8300"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"supply"</span><span class="p">:</span><span class="s2">"8300"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owners"</span><span class="p">:</span><span class="s2">"3153"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"CosmicMice"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"CM"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"default_image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"slug"</span><span class="p">:</span><span class="s2">"cosmicmice"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"decimals"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_block_seen"</span><span class="p">:</span><span class="s2">"13922596"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="mi">721</span><span class="p">,</span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x2841f909a115b63a97816f52bf69b828a4577d07"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-01T23:45:49.220Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nft_data_base_url"</span><span class="p">:</span><span class="s2">"ipfs://Qmc82EjDTo1uF5Uvse5GzQm49Ac7Mw2wuztrnP5ggScVFk/__TOKENID__.json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nft_image_base_url"</span><span class="p">:</span><span class="s2">"ipfs://QmVqeR36ZvXju74Eq7xRBdgwmUxRWTLCDTx4iZd9eFABY6/__TOKENID__.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'cm':2B 'cosmicmic':1A,3C"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_total"</span><span class="p">:</span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_hour"</span><span class="p">:</span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_today"</span><span class="p">:</span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_week"</span><span class="p">:</span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_total"</span><span class="p">:</span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_hour"</span><span class="p">:</span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_today"</span><span class="p">:</span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_week"</span><span class="p">:</span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_hour"</span><span class="p">:</span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_today"</span><span class="p">:</span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_week"</span><span class="p">:</span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"supply"</span><span class="p">:</span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owners"</span><span class="p">:</span><span class="s2">"1286"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves a specific collection.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/collection/:address/</code></p>
+<p><code>GET https://nft-data.vercel.app/collection/:address/</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -483,31 +535,95 @@ Remember — a happy kitten is an authenticated kitten!
 </tbody></table>
 <h1 id='nfts'>NFTs</h1><h2 id='get-all-nfts-in-a-collection'>Get All NFTs in a collection</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span><span class="dl">"</span><span class="s2">api</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">https://nft-data.vercel.app/collection/nfts/:address</span><span class="dl">"</span>
+<span class="p">);</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"8882"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"#8882 - Processing Hand"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Flipmaps are the lost 8,300 Blitmaps, only flipped."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x0e4b8e24789630618aa90072f520711d3d9db647/8882"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="s2">"</span><span class="se">\"</span><span class="s2">Type</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Flipling</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Slabs</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">◣ ◤ ◣ ◣</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Palette</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Hand (#57)</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Affinity</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Fire III</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Composition</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Processing (#22)</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x3e528ad9f3975f247243336d28596be4965b3c59"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T02:43:41.586Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T12:57:23.057Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13926089"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"64"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'300':9B '8':8B '8882':1A 'blitmap':10B 'flip':12B 'flipmap':4B 'hand':3A 'lost':7B 'process':2A"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"3656"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"#3656 - Genesis Swordy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Flipmaps are the lost 8,300 Blitmaps, only flipped."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x0e4b8e24789630618aa90072f520711d3d9db647/3656"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="s2">"</span><span class="se">\"</span><span class="s2">Type</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Flipling</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Slabs</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">◥ ◤ ◣ ◤</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Palette</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Swordy (#29)</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Affinity</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Fire III</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Composition</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Genesis (#0)</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x220ee648ebe5bb4fe52cb24898d51e4449efa42b"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T01:10:28.386Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T12:56:30.723Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13926086"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"125"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'300':9B '3656':1A '8':8B 'blitmap':10B 'flip':12B 'flipmap':4B 'genesi':2A 'lost':7B 'swordi':3A"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"4747"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Cosmic Mice #4747"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Races of mice fight together in this degen friendly PvP experiment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="s2">"ipfs://QmVqeR36ZvXju74Eq7xRBdgwmUxRWTLCDTx4iZd9eFABY6/4747.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/4747"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="s2">"</span><span class="se">\"</span><span class="s2">Ears</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Stud Left</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Eyes</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Glasses Green</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Face</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Assorted</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Head</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Neon Blue</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Nose</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Normal</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Race</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Alien</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Mouth</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Mask Gray</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Power</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">6</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Collar</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Blue</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Background</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Green</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x04ebe8ab7b47795f96a5f5542801aba4d598f458"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T01:26:57.860Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T13:58:55.359Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13926384"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"328"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'4747':3A 'cosmic':1A 'degen':11B 'experi':14B 'fight':7B 'friend':12B 'mice':2A,6B 'pvp':13B 'race':4B 'togeth':8B"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"3230"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Cosmic Mice #3230"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Races of mice fight together in this degen friendly PvP experiment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="s2">"ipfs://QmVqeR36ZvXju74Eq7xRBdgwmUxRWTLCDTx4iZd9eFABY6/3230.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/3230"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="s2">"</span><span class="se">\"</span><span class="s2">Ears</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Tag Right</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Eyes</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Brows Green</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Face</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Glow Red</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Head</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Neon Green</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Nose</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Normal</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Race</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Alien</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Mouth</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Mask Purple</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Power</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">7</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Collar</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">None</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Background</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Purple</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0xc9ea196c466b87fc4dc49f8c27b2285f9c3d5a0c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T01:22:38.868Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T13:50:21.409Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13926341"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"227"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'3230':3A 'cosmic':1A 'degen':11B 'experi':14B 'fight':7B 'friend':12B 'mice':2A,6B 'pvp':13B 'race':4B 'togeth':8B"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves all NFTs in a collection.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/collection/nfts/:address/</code></p>
+<p><code>GET https://nft-data.vercel.app/collection/nfts/:address</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -522,31 +638,94 @@ Remember — a happy kitten is an authenticated kitten!
 </tbody></table>
 <h2 id='get-a-specific-nft'>Get a specific NFT</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span><span class="dl">"</span><span class="s2">api</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">http://nft-data.vercel.app/nft/:address/:id/</span><span class="dl">"</span>
+<span class="p">);</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"5546"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"#5546 - Overloaded Cloudy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Flipmaps are the lost 8,300 Blitmaps, only flipped."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x0e4b8e24789630618aa90072f520711d3d9db647/5546"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="s2">"</span><span class="se">\"</span><span class="s2">Type</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Flipling</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Slabs</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">◥ ◢ ◢ ◢</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Palette</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Cloudy (#34)</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Affinity</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Water I, Fire I, Earth I</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Composition</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Overloaded (#14)</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x1dee8aef0c3b6b90748f970d9e092d1a50f3715a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T02:10:07.026Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T12:19:10.619Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13925914"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"458"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'300':9B '5546':1A '8':8B 'blitmap':10B 'cloudi':3A 'flip':12B 'flipmap':4B 'lost':7B 'overload':2A"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"4755"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"#4755 - Totally Dunce"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Flipmaps are the lost 8,300 Blitmaps, only flipped."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x0e4b8e24789630618aa90072f520711d3d9db647/4755"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="s2">"</span><span class="se">\"</span><span class="s2">Type</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Flipling</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Slabs</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">◣ ◢ ◢ ◢</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Palette</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Dunce (#68)</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Affinity</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Fire III</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Composition</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Totally (#9)</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x3d8d744f2bfdd1d36638a625992f4d7aebee878a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T01:56:19.779Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T12:21:11.331Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13925925"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"501"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'300':9B '4755':1A '8':8B 'blitmap':10B 'dunc':3A 'flip':12B 'flipmap':4B 'lost':7B 'total':2A"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"2404"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Cosmic Mice"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Races of mice fight together in this degen friendly PvP experiment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="s2">"https://lh3.googleusercontent.com/y1Yg9XgllhAIN3yYT27PZzeOEcOXOCwp7Q6icMdBlGtSaWsEXLkOCqmATjMRLIQY8MgqDAGEoce3YrXHVzdHAkmdBuK9SpIvolvh_4c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/2404"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x49131f1a71414cc29fe5a8d408dd6aafe0e48c4d"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T01:20:37.232Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T11:50:24.519Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13925787"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"429"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'cosmic':1A 'degen':10B 'experi':13B 'fight':6B 'friend':11B 'mice':2A,5B 'pvp':12B 'race':3B 'togeth':7B"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"2245"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Cosmic Mice"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Races of mice fight together in this degen friendly PvP experiment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="s2">"https://lh3.googleusercontent.com/y1Yg9XgllhAIN3yYT27PZzeOEcOXOCwp7Q6icMdBlGtSaWsEXLkOCqmATjMRLIQY8MgqDAGEoce3YrXHVzdHAkmdBuK9SpIvolvh_4c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/2245"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x5af1c6c005ce3b0238304d022ef5fa5b240fcc55"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T01:20:06.302Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T11:24:27.458Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13925689"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"398"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'cosmic':1A 'degen':10B 'experi':13B 'fight':6B 'friend':11B 'mice':2A,5B 'pvp':12B 'race':3B 'togeth':7B"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves a single NFT in a collection.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/nft/:address/:id/</code></p>
+<p><code>GET http://nft-data.vercel.app/nft/:address/:id/</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -565,31 +744,147 @@ Remember — a happy kitten is an authenticated kitten!
 </tbody></table>
 <h2 id='get-trading-history-for-specific-nft'>Get trading history for Specific NFT</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span><span class="dl">"</span><span class="s2">api</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">http://nft-data.vercel.app/transfers/:address/:id</span><span class="dl">"</span>
+<span class="p">);</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="nl">"collection"</span><span class="p">:</span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"block_number"</span><span class="p">:</span><span class="s2">"13925925"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transaction_hash"</span><span class="p">:</span><span class="s2">"0x6449e72d3fa5f186899d24ed94c5c78408dcdd6f8e4ad6be177b21c68f4a3a3e"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transaction_index"</span><span class="p">:</span><span class="s2">"213"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tx_to"</span><span class="p">:</span><span class="s2">"0x7be8076f4ea4a4ad08075c2508e481d6c946d12b"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tx_from"</span><span class="p">:</span><span class="s2">"0x3d8d744f2bfdd1d36638a625992f4d7aebee878a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"log_index"</span><span class="p">:</span><span class="s2">"501"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfer_index"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"2022-01-02T12:20:19.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0x3d8d744f2bfdd1d36638a625992f4d7aebee878a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0x809fd9c429ba301da0873879bd28c6809334a00a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"4755"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gas_price"</span><span class="p">:</span><span class="s2">"72750706989"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T01:56:19.779Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"#4755 - Totally Dunce"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Flipmaps are the lost 8,300 Blitmaps, only flipped."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x0e4b8e24789630618aa90072f520711d3d9db647/4755"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="s2">"</span><span class="se">\"</span><span class="s2">Type</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Flipling</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Slabs</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">◣ ◢ ◢ ◢</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Palette</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Dunce (#68)</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Affinity</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Fire III</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Composition</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Totally (#9)</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x3d8d744f2bfdd1d36638a625992f4d7aebee878a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T12:21:11.331Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13925925"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"501"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'300':9B '4755':1A '8':8B 'blitmap':10B 'dunc':3A 'flip':12B 'flipmap':4B 'lost':7B 'total':2A"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="nl">"collection"</span><span class="p">:</span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"block_number"</span><span class="p">:</span><span class="s2">"13923191"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transaction_hash"</span><span class="p">:</span><span class="s2">"0x85ace4e6eb6b420c7edfab28aea72eaa5bef513b3484f0d14adbc4115f688de5"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transaction_index"</span><span class="p">:</span><span class="s2">"62"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tx_to"</span><span class="p">:</span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tx_from"</span><span class="p">:</span><span class="s2">"0x809fd9c429ba301da0873879bd28c6809334a00a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"log_index"</span><span class="p">:</span><span class="s2">"41"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfer_index"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"2022-01-02T01:54:33.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0x809fd9c429ba301da0873879bd28c6809334a00a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0x0000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"4755"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gas_price"</span><span class="p">:</span><span class="s2">"101003100285"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T01:56:19.779Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"#4755 - Totally Dunce"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Flipmaps are the lost 8,300 Blitmaps, only flipped."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x0e4b8e24789630618aa90072f520711d3d9db647/4755"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="s2">"</span><span class="se">\"</span><span class="s2">Type</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Flipling</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Slabs</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">◣ ◢ ◢ ◢</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Palette</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Dunce (#68)</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Affinity</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Fire III</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Composition</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Totally (#9)</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x3d8d744f2bfdd1d36638a625992f4d7aebee878a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T12:21:11.331Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13925925"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"501"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'300':9B '4755':1A '8':8B 'blitmap':10B 'dunc':3A 'flip':12B 'flipmap':4B 'lost':7B 'total':2A"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"collection"</span><span class="p">:</span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"block_number"</span><span class="p">:</span><span class="s2">"13925857"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transaction_hash"</span><span class="p">:</span><span class="s2">"0xfdceb7f8dd26df7c115b0fc5bcdb7a63cb55a32eb39b116e6813f16f2daee26f"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transaction_index"</span><span class="p">:</span><span class="s2">"186"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tx_to"</span><span class="p">:</span><span class="s2">"0x0a267cf51ef038fc00e71801f5a524aec06e4f07"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tx_from"</span><span class="p">:</span><span class="s2">"0xf0a5043111c2a35fbd1acfb588c382e781ad6aef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"log_index"</span><span class="p">:</span><span class="s2">"207"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfer_index"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"2022-01-02T12:02:50.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0xf0a5043111c2a35fbd1acfb588c382e781ad6aef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0x72df07d6cb06d55b4e38f0b3761e0406e3fb38f6"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"973"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gas_price"</span><span class="p">:</span><span class="s2">"51839405234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T01:13:32.938Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Cosmic Mice"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Races of mice fight together in this degen friendly PvP experiment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="s2">"ipfs://QmUkYRYSK4NhdF7CcrUA1F73ESDJcCiVARNHWh2QS4vLsE/hidden.gif"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/973"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0xf0a5043111c2a35fbd1acfb588c382e781ad6aef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T12:03:56.459Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13925857"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"207"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'cosmic':1A 'degen':10B 'experi':13B 'fight':6B 'friend':11B 'mice':2A,5B 'pvp':12B 'race':3B 'togeth':7B"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"collection"</span><span class="p">:</span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"block_number"</span><span class="p">:</span><span class="s2">"13923004"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transaction_hash"</span><span class="p">:</span><span class="s2">"0xf7c9e1b7bc683ef08d6c63ef3bfec43373f6cb9f5798bccb6f73ae45f59c4718"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transaction_index"</span><span class="p">:</span><span class="s2">"161"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tx_to"</span><span class="p">:</span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tx_from"</span><span class="p">:</span><span class="s2">"0x72df07d6cb06d55b4e38f0b3761e0406e3fb38f6"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"log_index"</span><span class="p">:</span><span class="s2">"268"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfer_index"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"2022-01-02T01:11:21.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0x72df07d6cb06d55b4e38f0b3761e0406e3fb38f6"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0x0000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"973"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gas_price"</span><span class="p">:</span><span class="s2">"68811070431"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-02T01:13:32.938Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Cosmic Mice"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Races of mice fight together in this degen friendly PvP experiment"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="s2">"ipfs://QmUkYRYSK4NhdF7CcrUA1F73ESDJcCiVARNHWh2QS4vLsE/hidden.gif"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/973"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0xf0a5043111c2a35fbd1acfb588c382e781ad6aef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-01-02T12:03:56.459Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"13925857"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="s2">"207"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'cosmic':1A 'degen':10B 'experi':13B 'fight':6B 'friend':11B 'mice':2A,5B 'pvp':12B 'race':3B 'togeth':7B"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves transfer history of a single NFT.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET http://example.com/transfers/:address/:id</code></p>
+<p><code>GET http://nft-data.vercel.app/transfers/:address/:id</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -608,7 +903,9 @@ Remember — a happy kitten is an authenticated kitten!
 </tbody></table>
 <h1 id='accounts'>Accounts</h1><h2 id='get-all-nfts-owned-by-an-account'>Get All NFTs owned by an account</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span><span class="dl">"</span><span class="s2">api</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">http://nft-data.vercel.app/address/:address/</span><span class="dl">"</span>
+  <span class="p">);</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -632,7 +929,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre></div>
 <p>This endpoint retrieves all NFTs owned by an account.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/address/:address/</code></p>
+<p><code>GET http://nft-data.vercel.app/address/:address/</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
