@@ -96,7 +96,7 @@ Remember — a happy kitten is an authenticated kitten!
 const axios = require("axios");
 
 let { data: collection } = await axios(
-  "https://nft-data.vercel.app/collection/:address/"
+  "https://nft-data.vercel.app/collection/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/"
 );
 ```
 
