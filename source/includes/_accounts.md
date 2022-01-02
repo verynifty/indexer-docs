@@ -5,7 +5,9 @@
 ```javascript
 const axios = require("axios");
 
-let { data: nfts } = await axios("api");
+let { data: nfts } = await axios(
+  "http://nft-data.vercel.app/address/:address/"
+  );
 ```
 
 > The above command returns JSON structured like this:
@@ -33,7 +35,7 @@ This endpoint retrieves all NFTs owned by an account.
 
 ### HTTP Request
 
-`GET http://example.com/address/:address/`
+`GET http://nft-data.vercel.app/address/:address/`
 
 ### URL Parameters
 
