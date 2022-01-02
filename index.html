@@ -446,9 +446,9 @@
 </tr>
 </tbody></table>
 
-<aside class="success">
+<!-- <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
-</aside>
+</aside> -->
 <h2 id='get-a-specific-colletction'>Get a Specific colletction</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">collection</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
@@ -460,65 +460,66 @@ Remember — a happy kitten is an authenticated kitten!
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Flipmap"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"FLIP"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"default_image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x0e4b8e24789630618aa90072f520711d3d9db647/1700"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"slug"</span><span class="p">:</span><span class="s2">"flipmap"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"decimals"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"first_block_seen"</span><span class="p">:</span><span class="s2">"13920922"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="mi">721</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x0000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-01T17:41:04.864Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nft_data_base_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nft_image_base_url"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'flip':2B 'flipmap':1A,3C"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"transfers_total"</span><span class="p">:</span><span class="s2">"11043"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"transfers_hour"</span><span class="p">:</span><span class="s2">"9989"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"transfers_today"</span><span class="p">:</span><span class="s2">"11043"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"transfers_week"</span><span class="p">:</span><span class="s2">"11043"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"receivers_total"</span><span class="p">:</span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"receivers_hour"</span><span class="p">:</span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"receivers_today"</span><span class="p">:</span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"receivers_week"</span><span class="p">:</span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"mints_hour"</span><span class="p">:</span><span class="s2">"7259"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"mints_today"</span><span class="p">:</span><span class="s2">"8300"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"mints_week"</span><span class="p">:</span><span class="s2">"8300"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"supply"</span><span class="p">:</span><span class="s2">"8300"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"owners"</span><span class="p">:</span><span class="s2">"3153"</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0e4b8e24789630618aa90072f520711d3d9db647"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flipmap"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FLIP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"default_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x0e4b8e24789630618aa90072f520711d3d9db647/1700"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flipmap"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"decimals"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_block_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13920922"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">721</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-01T17:41:04.864Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nft_data_base_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nft_image_base_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"'flip':2B 'flipmap':1A,3C"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11043"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9989"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_today"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11043"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_week"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11043"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_today"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_week"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4010"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7259"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_today"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8300"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_week"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8300"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"supply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8300"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owners"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3153"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"CosmicMice"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"CM"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"default_image"</span><span class="p">:</span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"slug"</span><span class="p">:</span><span class="s2">"cosmicmice"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"decimals"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"first_block_seen"</span><span class="p">:</span><span class="s2">"13922596"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="mi">721</span><span class="p">,</span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x2841f909a115b63a97816f52bf69b828a4577d07"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-01-01T23:45:49.220Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nft_data_base_url"</span><span class="p">:</span><span class="s2">"ipfs://Qmc82EjDTo1uF5Uvse5GzQm49Ac7Mw2wuztrnP5ggScVFk/__TOKENID__.json"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nft_image_base_url"</span><span class="p">:</span><span class="s2">"ipfs://QmVqeR36ZvXju74Eq7xRBdgwmUxRWTLCDTx4iZd9eFABY6/__TOKENID__.png"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="s2">"'cm':2B 'cosmicmic':1A,3C"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"transfers_total"</span><span class="p">:</span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"transfers_hour"</span><span class="p">:</span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"transfers_today"</span><span class="p">:</span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"transfers_week"</span><span class="p">:</span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"receivers_total"</span><span class="p">:</span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"receivers_hour"</span><span class="p">:</span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"receivers_today"</span><span class="p">:</span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"receivers_week"</span><span class="p">:</span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"mints_hour"</span><span class="p">:</span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"mints_today"</span><span class="p">:</span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"mints_week"</span><span class="p">:</span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"supply"</span><span class="p">:</span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"owners"</span><span class="p">:</span><span class="s2">"1286"</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x280f2599693159a96e367b621670840fcff06ee2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CosmicMice"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CM"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"default_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cosmicmice"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"decimals"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_block_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13922596"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">721</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x2841f909a115b63a97816f52bf69b828a4577d07"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-01T23:45:49.220Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nft_data_base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ipfs://Qmc82EjDTo1uF5Uvse5GzQm49Ac7Mw2wuztrnP5ggScVFk/__TOKENID__.json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nft_image_base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ipfs://QmVqeR36ZvXju74Eq7xRBdgwmUxRWTLCDTx4iZd9eFABY6/__TOKENID__.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"'cm':2B 'cosmicmic':1A,3C"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_today"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfers_week"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7632"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_today"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivers_week"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1394"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_today"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mints_week"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"supply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owners"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1286"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves a specific collection.</p>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://nft-data.vercel.app/collection/:address/</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
