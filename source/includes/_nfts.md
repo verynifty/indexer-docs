@@ -6,7 +6,7 @@
 const axios = require("axios");
 
 let { data: nfts } = await axios(
-  "https://nft-data.vercel.app/collection/nfts/:address"
+  "https://nft-data.vercel.app/collection/nfts/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69"
 );
 ```
 
@@ -110,7 +110,7 @@ This endpoint retrieves all NFTs in a collection.
 const axios = require("axios");
 
 let { data: nfts } = await axios(
-  "http://nft-data.vercel.app/nft/:address/:id/"
+  "http://nft-data.vercel.app/nft/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/7120"
 );
 ```
 
@@ -174,25 +174,26 @@ let { data: nfts } = await axios(
     "latest_block_number":"13924360",
     "latest_log_index":"0",
     "search_weights":"'4763':2A 'aesthet':28B 'also':4B 'art':31B,41B 'club':42B 'color':24B 'combin':21B 'concept':20B 'creat':27B,36B 'degen':40B 'doodl':23B 'doodlebank':34B 'fidenza':17B 'field':11B 'flow':10B 'fund':32B 'generat':30B 'hobb':15B 'inspir':12B 'known':5B 'l3xc':38B 'palett':25B 'pukenza':1A,3B 'rainbow':7B 'similar':19B 'sooth':29B 'tyler':14B 'use':18B"
+
   },
   {
-    "address":"0x280f2599693159a96e367b621670840fcff06ee2",
-    "token_id":"2245",
-    "name":"Cosmic Mice",
-    "description":"Races of mice fight together in this degen friendly PvP experiment",
-    "external_url":null,
-    "original_image":"https://lh3.googleusercontent.com/y1Yg9XgllhAIN3yYT27PZzeOEcOXOCwp7Q6icMdBlGtSaWsEXLkOCqmATjMRLIQY8MgqDAGEoce3YrXHVzdHAkmdBuK9SpIvolvh_4c",
-    "image":"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/2245",
-    "original_animation":null,
-    "attributes":"",
-    "metadata_type":4,
-    "image_type":5,
-    "owner":"0x5af1c6c005ce3b0238304d022ef5fa5b240fcc55",
-    "created_at":"2022-01-02T01:20:06.302Z",
-    "updated_at":"2022-01-02T11:24:27.458Z",
-    "latest_block_number":"13925689",
-    "latest_log_index":"398",
-    "search_weights":"'cosmic':1A 'degen':10B 'experi':13B 'fight':6B 'friend':11B 'mice':2A,5B 'pvp':12B 'race':3B 'togeth':7B"
+    "address": "0x280f2599693159a96e367b621670840fcff06ee2",
+    "token_id": "2245",
+    "name": "Cosmic Mice",
+    "description": "Races of mice fight together in this degen friendly PvP experiment",
+    "external_url": null,
+    "original_image": "https://lh3.googleusercontent.com/y1Yg9XgllhAIN3yYT27PZzeOEcOXOCwp7Q6icMdBlGtSaWsEXLkOCqmATjMRLIQY8MgqDAGEoce3YrXHVzdHAkmdBuK9SpIvolvh_4c",
+    "image": "https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/2245",
+    "original_animation": null,
+    "attributes": "",
+    "metadata_type": 4,
+    "image_type": 5,
+    "owner": "0x5af1c6c005ce3b0238304d022ef5fa5b240fcc55",
+    "created_at": "2022-01-02T01:20:06.302Z",
+    "updated_at": "2022-01-02T11:24:27.458Z",
+    "latest_block_number": "13925689",
+    "latest_log_index": "398",
+    "search_weights": "'cosmic':1A 'degen':10B 'experi':13B 'fight':6B 'friend':11B 'mice':2A,5B 'pvp':12B 'race':3B 'togeth':7B"
   }
 ]
 ```
@@ -216,7 +217,7 @@ This endpoint retrieves a single NFT in a collection.
 const axios = require("axios");
 
 let { data: nfts } = await axios(
-  "http://nft-data.vercel.app/transfers/:address/:id"
+  "http://nft-data.vercel.app/transfers/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/7120"
 );
 ```
 
@@ -225,6 +226,7 @@ let { data: nfts } = await axios(
 ```json
 [
   {
+
     "collection":"0xfcb1315c4273954f74cb16d5b663dbf479eec62e",
     "block_number":"13902932",
     "transaction_hash":"0x3df4326d26cd6d24d60c4ac150e5cf8f17bdd555de5e35087fc64769b842a161","transaction_index":"125",
@@ -286,70 +288,71 @@ let { data: nfts } = await axios(
     "latest_block_number":"13914820",
     "latest_log_index":"0",
     "search_weights":"'1803':2A 'supduck':1A"
+
   },
   {
-    "collection":"0x280f2599693159a96e367b621670840fcff06ee2",
-    "block_number":"13925857",
-    "transaction_hash":"0xfdceb7f8dd26df7c115b0fc5bcdb7a63cb55a32eb39b116e6813f16f2daee26f",
-    "transaction_index":"186",
-    "tx_to":"0x0a267cf51ef038fc00e71801f5a524aec06e4f07",
-    "tx_from":"0xf0a5043111c2a35fbd1acfb588c382e781ad6aef",
-    "log_index":"207",
-    "transfer_index":"0",
-    "timestamp":"2022-01-02T12:02:50.000Z",
-    "to":"0xf0a5043111c2a35fbd1acfb588c382e781ad6aef",
-    "from":"0x72df07d6cb06d55b4e38f0b3761e0406e3fb38f6",
-    "amount":"1",
-    "token_id":"973",
-    "gas_price":"51839405234",
-    "created_at":"2022-01-02T01:13:32.938Z",
-    "address":"0x280f2599693159a96e367b621670840fcff06ee2",
-    "name":"Cosmic Mice",
-    "description":"Races of mice fight together in this degen friendly PvP experiment",
-    "external_url":null,
-    "original_image":"ipfs://QmUkYRYSK4NhdF7CcrUA1F73ESDJcCiVARNHWh2QS4vLsE/hidden.gif",
-    "image":"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/973",
-    "original_animation":null,
-    "attributes":null,
-    "metadata_type":5,
-    "image_type":4,
-    "owner":"0xf0a5043111c2a35fbd1acfb588c382e781ad6aef",
-    "updated_at":"2022-01-02T12:03:56.459Z",
-    "latest_block_number":"13925857",
-    "latest_log_index":"207",
-    "search_weights":"'cosmic':1A 'degen':10B 'experi':13B 'fight':6B 'friend':11B 'mice':2A,5B 'pvp':12B 'race':3B 'togeth':7B"
+    "collection": "0x280f2599693159a96e367b621670840fcff06ee2",
+    "block_number": "13925857",
+    "transaction_hash": "0xfdceb7f8dd26df7c115b0fc5bcdb7a63cb55a32eb39b116e6813f16f2daee26f",
+    "transaction_index": "186",
+    "tx_to": "0x0a267cf51ef038fc00e71801f5a524aec06e4f07",
+    "tx_from": "0xf0a5043111c2a35fbd1acfb588c382e781ad6aef",
+    "log_index": "207",
+    "transfer_index": "0",
+    "timestamp": "2022-01-02T12:02:50.000Z",
+    "to": "0xf0a5043111c2a35fbd1acfb588c382e781ad6aef",
+    "from": "0x72df07d6cb06d55b4e38f0b3761e0406e3fb38f6",
+    "amount": "1",
+    "token_id": "973",
+    "gas_price": "51839405234",
+    "created_at": "2022-01-02T01:13:32.938Z",
+    "address": "0x280f2599693159a96e367b621670840fcff06ee2",
+    "name": "Cosmic Mice",
+    "description": "Races of mice fight together in this degen friendly PvP experiment",
+    "external_url": null,
+    "original_image": "ipfs://QmUkYRYSK4NhdF7CcrUA1F73ESDJcCiVARNHWh2QS4vLsE/hidden.gif",
+    "image": "https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/973",
+    "original_animation": null,
+    "attributes": null,
+    "metadata_type": 5,
+    "image_type": 4,
+    "owner": "0xf0a5043111c2a35fbd1acfb588c382e781ad6aef",
+    "updated_at": "2022-01-02T12:03:56.459Z",
+    "latest_block_number": "13925857",
+    "latest_log_index": "207",
+    "search_weights": "'cosmic':1A 'degen':10B 'experi':13B 'fight':6B 'friend':11B 'mice':2A,5B 'pvp':12B 'race':3B 'togeth':7B"
   },
   {
-    "collection":"0x280f2599693159a96e367b621670840fcff06ee2",
-    "block_number":"13923004",
-    "transaction_hash":"0xf7c9e1b7bc683ef08d6c63ef3bfec43373f6cb9f5798bccb6f73ae45f59c4718",
-    "transaction_index":"161",
-    "tx_to":"0x280f2599693159a96e367b621670840fcff06ee2",
-    "tx_from":"0x72df07d6cb06d55b4e38f0b3761e0406e3fb38f6",
-    "log_index":"268",
-    "transfer_index":"0",
-    "timestamp":"2022-01-02T01:11:21.000Z",
-    "to":"0x72df07d6cb06d55b4e38f0b3761e0406e3fb38f6",
-    "from":"0x0000000000000000000000000000000000000000",
-    "amount":"1",
-    "token_id":"973",
-    "gas_price":"68811070431",
-    "created_at":"2022-01-02T01:13:32.938Z",
-    "address":"0x280f2599693159a96e367b621670840fcff06ee2",
-    "name":"Cosmic Mice",
-    "description":"Races of mice fight together in this degen friendly PvP experiment",
-    "external_url":null,
-    "original_image":"ipfs://QmUkYRYSK4NhdF7CcrUA1F73ESDJcCiVARNHWh2QS4vLsE/hidden.gif",
-    "image":"https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/973",
-    "original_animation":null,
-    "attributes":null,
-    "metadata_type":5,
-    "image_type":4,
-    "owner":"0xf0a5043111c2a35fbd1acfb588c382e781ad6aef",
-    "updated_at":"2022-01-02T12:03:56.459Z",
-    "latest_block_number":"13925857",
-    "latest_log_index":"207",
-    "search_weights":"'cosmic':1A 'degen':10B 'experi':13B 'fight':6B 'friend':11B 'mice':2A,5B 'pvp':12B 'race':3B 'togeth':7B"
+    "collection": "0x280f2599693159a96e367b621670840fcff06ee2",
+    "block_number": "13923004",
+    "transaction_hash": "0xf7c9e1b7bc683ef08d6c63ef3bfec43373f6cb9f5798bccb6f73ae45f59c4718",
+    "transaction_index": "161",
+    "tx_to": "0x280f2599693159a96e367b621670840fcff06ee2",
+    "tx_from": "0x72df07d6cb06d55b4e38f0b3761e0406e3fb38f6",
+    "log_index": "268",
+    "transfer_index": "0",
+    "timestamp": "2022-01-02T01:11:21.000Z",
+    "to": "0x72df07d6cb06d55b4e38f0b3761e0406e3fb38f6",
+    "from": "0x0000000000000000000000000000000000000000",
+    "amount": "1",
+    "token_id": "973",
+    "gas_price": "68811070431",
+    "created_at": "2022-01-02T01:13:32.938Z",
+    "address": "0x280f2599693159a96e367b621670840fcff06ee2",
+    "name": "Cosmic Mice",
+    "description": "Races of mice fight together in this degen friendly PvP experiment",
+    "external_url": null,
+    "original_image": "ipfs://QmUkYRYSK4NhdF7CcrUA1F73ESDJcCiVARNHWh2QS4vLsE/hidden.gif",
+    "image": "https://d3nt5b5e09uon7.cloudfront.net/0x280f2599693159a96e367b621670840fcff06ee2/973",
+    "original_animation": null,
+    "attributes": null,
+    "metadata_type": 5,
+    "image_type": 4,
+    "owner": "0xf0a5043111c2a35fbd1acfb588c382e781ad6aef",
+    "updated_at": "2022-01-02T12:03:56.459Z",
+    "latest_block_number": "13925857",
+    "latest_log_index": "207",
+    "search_weights": "'cosmic':1A 'degen':10B 'experi':13B 'fight':6B 'friend':11B 'mice':2A,5B 'pvp':12B 'race':3B 'togeth':7B"
   }
 ]
 ```
