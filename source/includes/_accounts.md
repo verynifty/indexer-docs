@@ -6,7 +6,7 @@
 const axios = require("axios");
 
 let { data: nfts } = await axios(
-  "https://b8rq70ce8j.execute-api.us-east-1.amazonaws.com/address/0x3612b2e93b49f6c797066ca8c38b7f522b32c7cb/"
+  "https://api.niftyapi.xyz/address/0x3612b2e93b49f6c797066ca8c38b7f522b32c7cb/"
 );
 ```
 

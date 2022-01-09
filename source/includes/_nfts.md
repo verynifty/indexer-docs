@@ -6,7 +6,7 @@
 const axios = require("axios");
 
 let { data: nfts } = await axios(
-  "https://b8rq70ce8j.execute-api.us-east-1.amazonaws.com/dev/collection/nfts/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69"
+  "https://api.niftyapi.xyz/dev/collection/nfts/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69"
 );
 ```
 
@@ -40,7 +40,7 @@ This endpoint retrieves all NFTs in a collection.
 
 ### HTTP Request
 
-`GET https://b8rq70ce8j.execute-api.us-east-1.amazonaws.com/dev/collection/nfts/:address`
+`GET https://api.niftyapi.xyz/dev/collection/nfts/:address`
 
 ### URL Parameters
 
