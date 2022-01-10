@@ -525,7 +525,7 @@ Remember — a happy kitten is an authenticated kitten!
 <h2 id='get-a-specific-nft'>Get a specific NFT</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
-  <span class="dl">"</span><span class="s2">http://nft-data.vercel.app/nft/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/7120</span><span class="dl">"</span>
+  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/nft/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/7120</span><span class="dl">"</span>
 <span class="p">);</span>
 </code></pre></div>
 <blockquote>
@@ -555,7 +555,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre></div>
 <p>This endpoint retrieves a single NFT in a collection.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://nft-data.vercel.app/nft/:address/:id/</code></p>
+<p><code>GET https://api.niftyapi.xyz/nft/:address/:id/</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -575,7 +575,7 @@ Remember — a happy kitten is an authenticated kitten!
 <h2 id='get-trading-history-for-specific-nft'>Get trading history for Specific NFT</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
-  <span class="dl">"</span><span class="s2">http://nft-data.vercel.app/transfers/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/7120</span><span class="dl">"</span>
+  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/transfers/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/7120</span><span class="dl">"</span>
 <span class="p">);</span>
 </code></pre></div>
 <blockquote>
@@ -618,7 +618,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre></div>
 <p>This endpoint retrieves transfer history of a single NFT.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET http://nft-data.vercel.app/transfers/:address/:id</code></p>
+<p><code>GET https://api.niftyapi.xyz/transfers/:address/:id</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -668,7 +668,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre></div>
 <p>This endpoint retrieves all NFTs owned by an account.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://nft-data.vercel.app/address/:address/</code></p>
+<p><code>GET https://api.niftyapi.xyz/address/:address/</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
