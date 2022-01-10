@@ -40,7 +40,7 @@ This endpoint retrieves all NFTs owned by an account.
 
 ### HTTP Request
 
-`GET http://nft-data.vercel.app/address/:address/`
+`GET https://api.niftyapi.xyz/address/:address/`
 
 ### URL Parameters
 

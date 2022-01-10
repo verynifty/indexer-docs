@@ -6,7 +6,7 @@
 const axios = require("axios");
 
 let { data: nfts } = await axios(
-  "https://api.niftyapi.xyz/dev/collection/nfts/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69"
+  "https://api.niftyapi.xyz/collection/nfts/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69"
 );
 ```
 
@@ -40,7 +40,7 @@ This endpoint retrieves all NFTs in a collection.
 
 ### HTTP Request
 
-`GET https://api.niftyapi.xyz/dev/collection/nfts/:address`
+`GET https://api.niftyapi.xyz/collection/nfts/:address`
 
 ### URL Parameters
 
@@ -54,7 +54,7 @@ This endpoint retrieves all NFTs in a collection.
 const axios = require("axios");
 
 let { data: nfts } = await axios(
-  "http://nft-data.vercel.app/nft/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/7120"
+  "https://api.niftyapi.xyz/nft/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/7120"
 );
 ```
 
@@ -88,7 +88,7 @@ This endpoint retrieves a single NFT in a collection.
 
 ### HTTP Request
 
-`GET http://nft-data.vercel.app/nft/:address/:id/`
+`GET https://api.niftyapi.xyz/nft/:address/:id/`
 
 ### URL Parameters
 
@@ -103,7 +103,7 @@ This endpoint retrieves a single NFT in a collection.
 const axios = require("axios");
 
 let { data: nfts } = await axios(
-  "http://nft-data.vercel.app/transfers/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/7120"
+  "https://api.niftyapi.xyz/transfers/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/7120"
 );
 ```
 
@@ -150,7 +150,7 @@ This endpoint retrieves transfer history of a single NFT.
 
 ### HTTP Request
 
-`GET http://nft-data.vercel.app/transfers/:address/:id`
+`GET https://api.niftyapi.xyz/transfers/:address/:id`
 
 ### URL Parameters
 

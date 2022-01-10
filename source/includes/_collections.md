@@ -5,9 +5,7 @@
 ```javascript
 const axios = require("axios");
 
-let { data: collections } = await axios(
-  "https://api.niftyapi.xyz/dev/collections"
-);
+let { data: collections } = await axios("https://api.niftyapi.xyz/collections");
 ```
 
 > The above command returns JSON structured like this:
@@ -49,7 +47,7 @@ This endpoint retrieves all collections.
 
 ### HTTP Request
 
-`GET https://api.niftyapi.xyz/dev/collections`
+`GET https://api.niftyapi.xyz/collections`
 
 ### Query Parameters
 
@@ -68,7 +66,7 @@ Remember — a happy kitten is an authenticated kitten!
 const axios = require("axios");
 
 let { data: collection } = await axios(
-  "https://api.niftyapi.xyz/dev/collection/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/"
+  "https://api.niftyapi.xyz/collection/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/"
 );
 ```
 
@@ -113,7 +111,7 @@ This endpoint retrieves a specific collection.
 
 ### HTTP Request
 
-`GET https://api.niftyapi.xyz/dev/collection/:address/`
+`GET https://api.niftyapi.xyz/collection/:address/`
 
 ### URL Parameters
 
