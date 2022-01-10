@@ -357,9 +357,7 @@
 <p>Welcome to the Indexer API! You can use our API to access any data on NFTs, we index NFT transfers and metadata on every block.</p>
 <h1 id='collections'>Collections</h1><h2 id='get-all-collections'>Get All Collections</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">collections</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
-  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/dev/collections</span><span class="dl">"</span>
-<span class="p">);</span>
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">collections</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/collections</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -397,7 +395,7 @@
 </span></code></pre></div>
 <p>This endpoint retrieves all collections.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.niftyapi.xyz/dev/collections</code></p>
+<p><code>GET https://api.niftyapi.xyz/collections</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -424,7 +422,7 @@ Remember — a happy kitten is an authenticated kitten!
 <h2 id='get-a-specific-colletction'>Get a Specific colletction</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">collection</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
-  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/dev/collection/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/</span><span class="dl">"</span>
+  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/collection/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/</span><span class="dl">"</span>
 <span class="p">);</span>
 </code></pre></div>
 <blockquote>
@@ -465,7 +463,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://api.niftyapi.xyz/dev/collection/:address/</code></p>
+<p><code>GET https://api.niftyapi.xyz/collection/:address/</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -481,7 +479,7 @@ Remember — a happy kitten is an authenticated kitten!
 <h1 id='nfts'>NFTs</h1><h2 id='get-all-nfts-in-a-collection'>Get All NFTs in a collection</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
-  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/dev/collection/nfts/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69</span><span class="dl">"</span>
+  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/collection/nfts/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69</span><span class="dl">"</span>
 <span class="p">);</span>
 </code></pre></div>
 <blockquote>
@@ -511,7 +509,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre></div>
 <p>This endpoint retrieves all NFTs in a collection.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.niftyapi.xyz/dev/collection/nfts/:address</code></p>
+<p><code>GET https://api.niftyapi.xyz/collection/nfts/:address</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
