@@ -47,3 +47,11 @@ This endpoint retrieves all NFTs owned by an account.
 | Parameter | Description                            |
 | --------- | -------------------------------------- |
 | Address   | The Address of the account to retrieve |
+
+### Query Parameters
+
+| Parameter  | Default | Description                     |
+| ---------- | ------- | ------------------------------- |
+| collection |         | Filter by collection address    |
+| perPage    | 20      | Number of collections to return |
+| page       | 0       | The page (for pagination)       |
