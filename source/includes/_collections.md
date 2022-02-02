@@ -60,7 +60,7 @@ This endpoint retrieves all collections.
 Remember — a happy kitten is an authenticated kitten!
 </aside> -->
 
-## Get a Specific colletction
+## Get a Specific collection
 
 ```javascript
 const axios = require("axios");
