@@ -28,4 +28,4 @@ meta:
 
 Welcome to the Indexer API! You can use our API to access any data on NFTs, we index NFT transfers and metadata on every block. If you need any endpoints or find any bugs please let us know on [our discord](https://discord.com/invite/kfByfux).
 
-We'll open source all the code once we have more time to cleaning and finish indexing metadata to reach full ethereum coverage.
+We'll open source all the code once we have more time to clean it, and we finish indexing metadata to reach full ethereum coverage.
