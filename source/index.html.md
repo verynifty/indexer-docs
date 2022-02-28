@@ -30,4 +30,4 @@ Welcome to the Indexer API! You can use our API to access any data on NFTs, we i
 
 We'll open source all the code once we have more time to clean it, and we finish indexing metadata to reach full ethereum coverage.
 
-For Arbiturm endpoints you can use the arbitrum.niftyapi.xyz path
+For Arbiturm endpoints you can use the arbitrum.niftyapi.xyz 
