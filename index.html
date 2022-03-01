@@ -358,7 +358,23 @@
 
 <p>We&#39;ll open source all the code once we have more time to clean it, and we finish indexing metadata to reach full ethereum coverage.</p>
 
-<p>For Arbiturm endpoints you can use the arbitrum.niftyapi.xyz </p>
+<p>Available endpoints andnetworks:</p>
+
+<table><thead>
+<tr>
+<th>Network</th>
+<th>Endpoint</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Ethereum Mainnet</td>
+<td>https://api.niftyapi.xyz/</td>
+</tr>
+<tr>
+<td>Arbitrum</td>
+<td>https://arbitrum.niftyapi.xyz/</td>
+</tr>
+</tbody></table>
 <h1 id='collections'>Collections</h1><h2 id='get-all-collections'>Get All Collections</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">collections</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/collections</span><span class="dl">"</span><span class="p">);</span>
