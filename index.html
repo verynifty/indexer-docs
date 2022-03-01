@@ -346,6 +346,9 @@
                   <li>
                     <a href="#get-all-nfts-owned-by-an-account" class="toc-h2 toc-link" data-title="Get All NFTs owned by an account">Get All NFTs owned by an account</a>
                   </li>
+                  <li>
+                    <a href="#get-all-nfts-owned-by-an-account-2" class="toc-h2 toc-link" data-title="Get All NFTs owned by an account">Get All NFTs owned by an account</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -683,7 +686,8 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13942539"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"'441/870':2A 'afterburn':1A,3B 'xcopi':5B"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves all NFTs owned by an account.</p>
@@ -723,6 +727,66 @@ Remember — a happy kitten is an authenticated kitten!
 <td>page</td>
 <td>0</td>
 <td>The page (for pagination)</td>
+</tr>
+</tbody></table>
+<h2 id='get-all-nfts-owned-by-an-account-2'>Get All NFTs owned by an account</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/address/0x3612b2e93b49f6c797066ca8c38b7f522b32c7cb/</span><span class="dl">"</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"collection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x90d4ffbf13bf3203940e6dace392f7c23ff6b9ed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"block_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14291770"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transaction_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x3df418e94e3fdc901f429113edb1366df63c2a43068e9460ea03dda2c663564d"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transaction_index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tx_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x90d4ffbf13bf3203940e6dace392f7c23ff6b9ed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tx_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x047f606fd5b2baa5f5c6c4ab8958e45cb6b054b7"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"log_index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"285"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfer_index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-28T01:44:44.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x047f606fd5b2baa5f5c6c4ab8958e45cb6b054b7"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x047f606fd5b2baa5f5c6c4ab8958e45cb6b054b7"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8296"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gas_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"53380609957"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-25T19:15:35.057Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x90d4ffbf13bf3203940e6dace392f7c23ff6b9ed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cupcat Kitten 8296"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cupcat Kittens are a collection made by Cupcats as 2nd season. This collection includes cute kittens that are part of Cupcats ecosystem."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"external_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gateway.ipfs.io/ipfs/QmZKXExwT5AMyr3MHQ4HJoBabaXfjEXKLtocnUFXHZ6GPU/8296.json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gateway.ipfs.io/ipfs/Qme9wQdbzn88126BR6fGtR8RW7x5EcDQwJUnuwADVRLj62"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gateway.ipfs.io/ipfs/Qme9wQdbzn88126BR6fGtR8RW7x5EcDQwJUnuwADVRLj62"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x047f606fd5b2baa5f5c6c4ab8958e45cb6b054b7"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-02-28T01:47:12.343Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14291770"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"285"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"'2nd':13B '8296':3A 'collect':8B,16B 'cupcat':1A,4B,11B,24B 'cute':18B 'ecosystem':25B 'includ':17B 'kitten':2A,5B,19B 'made':9B 'part':22B 'season':14B"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all NFTs transfers related to an address (received or sent).</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.niftyapi.xyz/address/:address/activity</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Address</td>
+<td>The Address of the account to retrieve</td>
 </tr>
 </tbody></table>
 
