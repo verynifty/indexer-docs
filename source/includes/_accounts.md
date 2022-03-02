@@ -1,6 +1,6 @@
 # Accounts
 
-## Get All NFTs owned by an account
+## Get All NFT owned by an account
 
 ```javascript
 const axios = require("axios");
@@ -37,11 +37,11 @@ let { data: nfts } = await axios(
 ]
 ```
 
-This endpoint retrieves all NFTs owned by an account.
+This endpoint retrieves all NFT transfers by an account.
 
 ### HTTP Request
 
-`GET https://api.niftyapi.xyz/address/:address/`
+`GET https://api.niftyapi.xyz/address/:address/activity`
 
 ### URL Parameters
 
@@ -57,15 +57,13 @@ This endpoint retrieves all NFTs owned by an account.
 | perPage    | 20      | Number of collections to return |
 | page       | 0       | The page (for pagination)       |
 
-
-
-## Get All NFTs owned by an account
+## Get All NFT transfers by an account
 
 ```javascript
 const axios = require("axios");
 
 let { data: nfts } = await axios(
-  "https://api.niftyapi.xyz/address/0x3612b2e93b49f6c797066ca8c38b7f522b32c7cb/"
+  "https://api.niftyapi.xyz/address/0x3612b2e93b49f6c797066ca8c38b7f522b32c7cb/activity"
 );
 ```
 
@@ -120,5 +118,3 @@ This endpoint retrieves all NFTs transfers related to an address (received or se
 | Parameter | Description                            |
 | --------- | -------------------------------------- |
 | Address   | The Address of the account to retrieve |
-
-
