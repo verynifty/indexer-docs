@@ -324,6 +324,9 @@
                   <li>
                     <a href="#get-a-specific-collection" class="toc-h2 toc-link" data-title="Get a Specific collection">Get a Specific collection</a>
                   </li>
+                  <li>
+                    <a href="#get-attributes-of-a-collection" class="toc-h2 toc-link" data-title="Get attributes of a collection">Get attributes of a collection</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -488,6 +491,48 @@ Remember — a happy kitten is an authenticated kitten!
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.niftyapi.xyz/collection/:address/</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Address</td>
+<td>The Address of the collection to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-attributes-of-a-collection'>Get attributes of a collection</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">collection</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/collection/attributes/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/</span><span class="dl">"</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accessory"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"#1: Early Acclimator Helmet"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"#798: MoonCatRescue Turned Four!"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all attributes from a collection with a count of each attributes.</p>
+
+<!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://api.niftyapi.xyz/collection/attributes/:address</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
