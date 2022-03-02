@@ -347,10 +347,10 @@
             <a href="#accounts" class="toc-h1 toc-link" data-title="Accounts">Accounts</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-nfts-owned-by-an-account" class="toc-h2 toc-link" data-title="Get All NFTs owned by an account">Get All NFTs owned by an account</a>
+                    <a href="#get-all-nft-owned-by-an-account" class="toc-h2 toc-link" data-title="Get All NFT owned by an account">Get All NFT owned by an account</a>
                   </li>
                   <li>
-                    <a href="#get-all-nfts-owned-by-an-account-2" class="toc-h2 toc-link" data-title="Get All NFTs owned by an account">Get All NFTs owned by an account</a>
+                    <a href="#get-all-nft-transfers-by-an-account" class="toc-h2 toc-link" data-title="Get All NFT transfers by an account">Get All NFT transfers by an account</a>
                   </li>
               </ul>
           </li>
@@ -703,7 +703,7 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The NFT ID To retrieve</td>
 </tr>
 </tbody></table>
-<h1 id='accounts'>Accounts</h1><h2 id='get-all-nfts-owned-by-an-account'>Get All NFTs owned by an account</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
+<h1 id='accounts'>Accounts</h1><h2 id='get-all-nft-owned-by-an-account'>Get All NFT owned by an account</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
   <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/address/0x3612b2e93b49f6c797066ca8c38b7f522b32c7cb/</span><span class="dl">"</span>
@@ -735,9 +735,9 @@ Remember — a happy kitten is an authenticated kitten!
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all NFTs owned by an account.</p>
+<p>This endpoint retrieves all NFT transfers by an account.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.niftyapi.xyz/address/:address/</code></p>
+<p><code>GET https://api.niftyapi.xyz/address/:address/activity</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -774,10 +774,10 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The page (for pagination)</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-nfts-owned-by-an-account-2'>Get All NFTs owned by an account</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
+<h2 id='get-all-nft-transfers-by-an-account'>Get All NFT transfers by an account</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
-  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/address/0x3612b2e93b49f6c797066ca8c38b7f522b32c7cb/</span><span class="dl">"</span>
+  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/address/0x3612b2e93b49f6c797066ca8c38b7f522b32c7cb/activity</span><span class="dl">"</span>
 <span class="p">);</span>
 </code></pre></div>
 <blockquote>
