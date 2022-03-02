@@ -118,3 +118,49 @@ This endpoint retrieves a specific collection.
 | Parameter | Description                               |
 | --------- | ----------------------------------------- |
 | Address   | The Address of the collection to retrieve |
+
+
+## Get attributes of a collection
+
+```javascript
+const axios = require("axios");
+
+let { data: collection } = await axios(
+  "https://api.niftyapi.xyz/collection/attributes/0xc3f733ca98e0dad0386979eb96fb1722a1a05e69/"
+);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "key": "Accessory",
+    "attributes": [
+      {
+        "#1: Early Acclimator Helmet": 34
+      },
+      {
+        "#798: MoonCatRescue Turned Four!": 23
+      },
+    ],
+    ...
+  },
+  ...
+]
+```
+
+This endpoint retrieves all attributes from a collection with a count of each attributes.
+
+<!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
+
+### HTTP Request
+
+`GET https://api.niftyapi.xyz/collection/attributes/:address`
+
+### URL Parameters
+
+| Parameter | Description                               |
+| --------- | ----------------------------------------- |
+| Address   | The Address of the collection to retrieve |
+
