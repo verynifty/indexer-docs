@@ -12,6 +12,7 @@ includes:
   - collections
   - nfts
   - accounts
+  - zora
   # - authentication
   # - errors
 
