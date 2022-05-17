@@ -758,15 +758,13 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-05T01:34:28.873Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-05T02:05:33.351Z"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13942539"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"search_weights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"'441/870':2A 'afterburn':1A,3B 'xcopi':5B"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves all NFT transfers by an account.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.niftyapi.xyz/address/:address/activity</code></p>
+<p><code>GET https://api.niftyapi.xyz/address/:address</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -789,20 +787,23 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>collection</td>
-<td></td>
+<td>OPTIONAL</td>
 <td>Filter by collection address</td>
 </tr>
 <tr>
-<td>perPage</td>
-<td>20</td>
-<td>Number of collections to return</td>
+<td>attributes</td>
+<td>OPTIONAL</td>
+<td>Attributes filter</td>
 </tr>
 <tr>
-<td>page</td>
-<td>0</td>
-<td>The page (for pagination)</td>
+<td>s</td>
+<td>OPTIONAL</td>
+<td>Search string</td>
 </tr>
 </tbody></table>
+
+<p>| perPage    | 20      | Number of collections to return |
+| page       | 0       | The page (for pagination)       |</p>
 <h2 id='get-all-nft-transfers-by-an-account'>Get All NFT transfers by an account</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
