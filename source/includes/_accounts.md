@@ -30,8 +30,6 @@ let { data: nfts } = await axios(
     "created_at": "2022-01-05T01:34:28.873Z",
     "updated_at": "2022-01-05T02:05:33.351Z",
     "latest_block_number": "13942539",
-    "latest_log_index": "0",
-    "search_weights": "'441/870':2A 'afterburn':1A,3B 'xcopi':5B"
   },
   ...
 ]
@@ -41,7 +39,7 @@ This endpoint retrieves all NFT transfers by an account.
 
 ### HTTP Request
 
-`GET https://api.niftyapi.xyz/address/:address/activity`
+`GET https://api.niftyapi.xyz/address/:address`
 
 ### URL Parameters
 
@@ -53,7 +51,10 @@ This endpoint retrieves all NFT transfers by an account.
 
 | Parameter  | Default | Description                     |
 | ---------- | ------- | ------------------------------- |
-| collection |         | Filter by collection address    |
+| collection | OPTIONAL| Filter by collection address    |
+| attributes | OPTIONAL| Attributes filter    |
+| s | OPTIONAL| Search string    |
+
 | perPage    | 20      | Number of collections to return |
 | page       | 0       | The page (for pagination)       |
 
