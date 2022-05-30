@@ -358,10 +358,10 @@
             <a href="#zora-marketplace-data" class="toc-h1 toc-link" data-title="Zora Marketplace Data">Zora Marketplace Data</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#asks-for-owner" class="toc-h2 toc-link" data-title="Asks for owner">Asks for owner</a>
+                    <a href="#get-all-active-asks-for-owner" class="toc-h2 toc-link" data-title="Get all active Asks for owner">Get all active Asks for owner</a>
                   </li>
                   <li>
-                    <a href="#ask-for-nft" class="toc-h2 toc-link" data-title="Ask for NFT">Ask for NFT</a>
+                    <a href="#get-active-ask-for-nft" class="toc-h2 toc-link" data-title="Get active Ask for NFT">Get active Ask for NFT</a>
                   </li>
                   <li>
                     <a href="#ask-for-collection" class="toc-h2 toc-link" data-title="Ask for Collection">Ask for Collection</a>
@@ -875,10 +875,140 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The Address of the account to retrieve</td>
 </tr>
 </tbody></table>
-<h1 id='zora-marketplace-data'>Zora Marketplace Data</h1><h2 id='asks-for-owner'>Asks for owner</h2>
-<p>https://api.niftyapi.xyz/zora/asks/owner/:address</p>
-<h2 id='ask-for-nft'>Ask for NFT</h2>
-<p>https://api.niftyapi.xyz/zora/ask/:collection/:token_id</p>
+<h1 id='zora-marketplace-data'>Zora Marketplace Data</h1><h2 id='get-all-active-asks-for-owner'>Get all active Asks for owner</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/zora/asks/owner/0x35F36467CA7c6d1B4e33E5d183AEf9a01486efa7</span><span class="dl">"</span>
+<span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"asks"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"block_number"</span><span class="p">:</span><span class="s2">"14490562"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"2022-03-30T23:49:14.000Z"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"log_index"</span><span class="p">:</span><span class="s2">"431"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"transaction_hash"</span><span class="p">:</span><span class="s2">"0x4bcbf7c9618e4ede1e5583f46739e707bcf04d5527ecaaf6b3113719c70bc2a9"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0xa7f636adf14512199716688b33a069dbcb6d5766"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"4339"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"buyer"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"finder"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"seller"</span><span class="p">:</span><span class="s2">"0x08f8d3aaa03043690b0f2f8d001f722534ffbc5e"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"seller_funds_recipient"</span><span class="p">:</span><span class="s2">"0x08f8d3aaa03043690b0f2f8d001f722534ffbc5e"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"currency"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"price"</span><span class="p">:</span><span class="s2">"1000000000000000000"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"nft"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0xa7f636adf14512199716688b33a069dbcb6d5766"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"token_id"</span><span class="p">:</span><span class="mi">4339</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Dank Ducks #4339"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"6,969 of the dankest ducks floating in the metaverse."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"external_url"</span><span class="p">:</span><span class="s2">"https://gateway.ipfs.io/ipfs/QmXS9Sfn7rQiod4ZppqEsWEX3UJUoiTTAnqPv7VBuKt1Fq/4339.json"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"original_image"</span><span class="p">:</span><span class="s2">"https://gateway.ipfs.io/ipfs/Qma8T1FABPJqjrPvzknyHwTW8Myg4teWdFE1FEowshb6Mt/4339.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://media.niftyapi.xyz/0xa7f636adf14512199716688b33a069dbcb6d5766/4339"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"attributes"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"Body"</span><span class="p">:</span><span class="s2">"Base"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"Hats"</span><span class="p">:</span><span class="s2">"Gray_Cat_Hat"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"Faces"</span><span class="p">:</span><span class="s2">"Happy"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"Clothes"</span><span class="p">:</span><span class="s2">"White_Tuxedo"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"Backgrounds"</span><span class="p">:</span><span class="s2">"Uncommon"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x08f8d3aaa03043690b0f2f8d001f722534ffbc5e"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-03-25T14:59:43.210581"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-05-29T01:13:09.837633"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="mi">14863589</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="mi">509</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns active asks created by user address</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.niftyapi.xyz/zora/asks/owner/:address</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Address</td>
+<td>The user address to retrieve active asks from</td>
+</tr>
+</tbody></table>
+<h2 id='get-active-ask-for-nft'>Get active Ask for NFT</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/zora/ask/0xa7d8d9ef8D8Ce8992Df33D8b8CF4Aebabd5bD270/205000237</span><span class="dl">"</span>
+<span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"asks"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"block_number"</span><span class="p">:</span><span class="s2">"14490562"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"2022-03-30T23:49:14.000Z"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"log_index"</span><span class="p">:</span><span class="s2">"431"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"transaction_hash"</span><span class="p">:</span><span class="s2">"0x4bcbf7c9618e4ede1e5583f46739e707bcf04d5527ecaaf6b3113719c70bc2a9"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0xa7f636adf14512199716688b33a069dbcb6d5766"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"4339"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"buyer"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"finder"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"seller"</span><span class="p">:</span><span class="s2">"0x08f8d3aaa03043690b0f2f8d001f722534ffbc5e"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"seller_funds_recipient"</span><span class="p">:</span><span class="s2">"0x08f8d3aaa03043690b0f2f8d001f722534ffbc5e"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"currency"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"price"</span><span class="p">:</span><span class="s2">"1000000000000000000"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"nft"</span><span class="p">:{</span><span class="w">
+            </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0xa7f636adf14512199716688b33a069dbcb6d5766"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"token_id"</span><span class="p">:</span><span class="mi">4339</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Dank Ducks #4339"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"6,969 of the dankest ducks floating in the metaverse."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"external_url"</span><span class="p">:</span><span class="s2">"https://gateway.ipfs.io/ipfs/QmXS9Sfn7rQiod4ZppqEsWEX3UJUoiTTAnqPv7VBuKt1Fq/4339.json"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"original_image"</span><span class="p">:</span><span class="s2">"https://gateway.ipfs.io/ipfs/Qma8T1FABPJqjrPvzknyHwTW8Myg4teWdFE1FEowshb6Mt/4339.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://media.niftyapi.xyz/0xa7f636adf14512199716688b33a069dbcb6d5766/4339"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"original_animation"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"attributes"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"Body"</span><span class="p">:</span><span class="s2">"Base"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"Hats"</span><span class="p">:</span><span class="s2">"Gray_Cat_Hat"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"Faces"</span><span class="p">:</span><span class="s2">"Happy"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"Clothes"</span><span class="p">:</span><span class="s2">"White_Tuxedo"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"Backgrounds"</span><span class="p">:</span><span class="s2">"Uncommon"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"metadata_type"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x08f8d3aaa03043690b0f2f8d001f722534ffbc5e"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-03-25T14:59:43.210581"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-05-29T01:13:09.837633"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="mi">14863589</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"latest_log_index"</span><span class="p">:</span><span class="mi">509</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns active asks created by user address</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.niftyapi.xyz/zora/ask/collection/:token_id</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>collection</td>
+<td>Collection address of NFT</td>
+</tr>
+<tr>
+<td>token_id</td>
+<td>the token id for NFT</td>
+</tr>
+</tbody></table>
 <h2 id='ask-for-collection'>Ask for Collection</h2>
 <p>https://api.niftyapi.xyz/zora/ask/collection/:collection</p>
 <h2 id='offer-for-owner'>Offer for owner</h2>
