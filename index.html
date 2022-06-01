@@ -2093,37 +2093,35 @@ https://api.niftyapi.xyz/zora/ask/collection/:collection</p>
 <blockquote>
 <p>encode json using URI encoding into</p>
 </blockquote>
-
-<p><code>%7B%22Background%22%3A%5B%22Orange%22%5D%7D</code></p>
-
+<div class="highlight"><pre class="highlight plaintext"><code>%7B%22Background%22%3A%5B%22Orange%22%5D%7D
+</code></pre></div>
 <blockquote>
 <p>pass filter</p>
 </blockquote>
-
-<p><code>GET https://api.niftyapi.xyz/address/0x900647fd2d4af5b3bb21d98b3aa6d3cc49b35ced?page=1&amp;perPage=30&amp;collection=0x6ff683ea4ba14aa2a0fa3ca927b7886dba827b65&amp;attributes=%7B%22Background%22%3A%5B%22Orange%22%5D%7D</code></p>
-
+<div class="highlight"><pre class="highlight plaintext"><code>GET https://api.niftyapi.xyz/address/0x900647fd2d4af5b3bb21d98b3aa6d3cc49b35ced?page=1&amp;perPage=30&amp;collection=0x6ff683ea4ba14aa2a0fa3ca927b7886dba827b65&amp;attributes=%7B%22Background%22%3A%5B%22Orange%22%5D%7D`
+</code></pre></div>
 <blockquote>
 <p>Should return below result</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>[
-   {
-      "address":"0x6ff683ea4ba14aa2a0fa3ca927b7886dba827b65",
-      "token_id":"2875",
-      "name":"pepe mfer #2875",
-      "description":"A total of 7000 Pepes mfers created. This project is in the public domain for the community to do as they please. 10% of the initial sale will be sent to the mfer treasury.  Like Sartoshi said:  \"Discord\" - no, we don’t; mfers built one for mfers \"Roadmap\" - no, mfers are paving their own roads \"Paid promos\" - no, mfers move organically \"Utility\" - mfers are the utility mfer",
-      "external_url":"https://gateway.ipfs.io/ipfs/bafybeia24ckqc3qi5zg57j2wsclgqbfkmziixy5grlgctjljmhpco7ejde/2875.json",
-      "image":"https://media.niftyapi.xyz/0x6ff683ea4ba14aa2a0fa3ca927b7886dba827b65/2875",
-      "attributes":"\"Body\"=&gt;\"Brown\", \"Eyes\"=&gt;\"Purple Shades\", \"Head\"=&gt;\"Mohawk Yellow\", \"Mouth\"=&gt;\"Smile\", \"Shirt\"=&gt;\"Collared Shirt Black\", \"Background\"=&gt;\"Orange\", \"Headphones\"=&gt;\"Black Headphones\"",
-      "image_type":4,
-      "owner":"0x900647fd2d4af5b3bb21d98b3aa6d3cc49b35ced",
-      "created_at":"2022-03-10T16:36:49.236Z",
-      "updated_at":"2022-05-29T01:35:24.671Z",
-      "latest_block_number":"14863680",
-      "collection_name":"Pepe mfers",
-      "collection_symbol":"pm"
-   }
-]
-</code></pre></div>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x6ff683ea4ba14aa2a0fa3ca927b7886dba827b65"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"token_id"</span><span class="p">:</span><span class="s2">"2875"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"pepe mfer #2875"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"A total of 7000 Pepes mfers created. This project is in the public domain for the community to do as they please. 10% of the initial sale will be sent to the mfer treasury.  Like Sartoshi said:  </span><span class="se">\"</span><span class="s2">Discord</span><span class="se">\"</span><span class="s2"> - no, we don’t; mfers built one for mfers </span><span class="se">\"</span><span class="s2">Roadmap</span><span class="se">\"</span><span class="s2"> - no, mfers are paving their own roads </span><span class="se">\"</span><span class="s2">Paid promos</span><span class="se">\"</span><span class="s2"> - no, mfers move organically </span><span class="se">\"</span><span class="s2">Utility</span><span class="se">\"</span><span class="s2"> - mfers are the utility mfer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"external_url"</span><span class="p">:</span><span class="s2">"https://gateway.ipfs.io/ipfs/bafybeia24ckqc3qi5zg57j2wsclgqbfkmziixy5grlgctjljmhpco7ejde/2875.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"image"</span><span class="p">:</span><span class="s2">"https://media.niftyapi.xyz/0x6ff683ea4ba14aa2a0fa3ca927b7886dba827b65/2875"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"attributes"</span><span class="p">:</span><span class="s2">"</span><span class="se">\"</span><span class="s2">Body</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Brown</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Eyes</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Purple Shades</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Head</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Mohawk Yellow</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Mouth</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Smile</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Shirt</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Collared Shirt Black</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Background</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Orange</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Headphones</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Black Headphones</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"image_type"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"owner"</span><span class="p">:</span><span class="s2">"0x900647fd2d4af5b3bb21d98b3aa6d3cc49b35ced"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2022-03-10T16:36:49.236Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2022-05-29T01:35:24.671Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="s2">"14863680"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"collection_name"</span><span class="p">:</span><span class="s2">"Pepe mfers"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"collection_symbol"</span><span class="p">:</span><span class="s2">"pm"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
