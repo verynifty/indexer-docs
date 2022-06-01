@@ -35,7 +35,7 @@ let { data: nfts } = await axios(
 ]
 ```
 
-This endpoint retrieves all NFT transfers by an account.
+This endpoint retrieves all NFT owned by an account.
 
 ### HTTP Request
 
@@ -49,14 +49,13 @@ This endpoint retrieves all NFT transfers by an account.
 
 ### Query Parameters
 
-| Parameter  | Default | Description                     |
-| ---------- | ------- | ------------------------------- |
-| collection | OPTIONAL| Filter by collection address    |
-| attributes | OPTIONAL| Attributes filter    |
-| s | OPTIONAL| Search string    |
-
-| perPage    | 20      | Number of collections to return |
-| page       | 0       | The page (for pagination)       |
+| Parameter  | Default  | Description                     |
+| ---------- | -------- | ------------------------------- |
+| collection | OPTIONAL | Filter by collection address    |
+| attributes | OPTIONAL | Attributes filter               |
+| s          | OPTIONAL | Search string                   |
+| perPage    | 20       | Number of collections to return |
+| page       | 1        | The page (for pagination)       |
 
 ## Get All NFT transfers by an account
 
