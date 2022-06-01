@@ -25,10 +25,18 @@ A URI encoded json object value should be passed for attribute query parameter
 > Complete HTTP example
 
 ```
-GET https://api.niftyapi.xyz/address/0x900647fd2d4af5b3bb21d98b3aa6d3cc49b35ced?page=1&perPage=30&collection=0x6ff683ea4ba14aa2a0fa3ca927b7886dba827b65&attributes=%7B%22Background%22%3A%5B%22Orange%22%5D%7D`
+GET https://api.niftyapi.xyz/address/0x900647fd2d4af5b3bb21d98b3aa6d3cc49b35ced?collection=0x6ff683ea4ba14aa2a0fa3ca927b7886dba827b65&attributes=%7B%22Background%22%3A%5B%22Orange%22%5D%7D`
 ```
 
 ```javascript
+const axios = require("axios");
+
+let userAddress = "0x900647fd2d4af5b3bb21d98b3aa6d3cc49b35ced"
+let collection = "0x6ff683ea4ba14aa2a0fa3ca927b7886dba827b65"
+let attributes = encodeURIComponent(JSON.stringify({"Background":["Orange"]}))
+let url = `https://api.niftyapi.xyz/address/${userAddress}?collection=${collection}&attributes=${attributes}`
+let { data: nfts } = await axios(url);
+
 ```
 
 > Should return below result
