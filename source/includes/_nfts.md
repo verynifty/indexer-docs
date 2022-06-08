@@ -48,6 +48,15 @@ This endpoint retrieves all NFTs in a collection.
 | --------- | ------------------------------------ |
 | Address   | The collection to retrieve NFTs from |
 
+### Query Parameters
+
+| Parameter  | Default  | Description                     |
+| ---------- | -------- | ------------------------------- |
+| attributes | OPTIONAL | Attributes filter               |
+| s          | OPTIONAL | Search string                   |
+| perPage    | 20       | Number of collections to return |
+| page       | 1        | The page (for pagination)       |
+
 ## Get a specific NFT
 
 ```javascript
