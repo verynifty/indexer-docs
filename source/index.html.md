@@ -13,6 +13,7 @@ includes:
   - nfts
   - accounts
   - zora
+  - stats
   - parameters
   # - authentication
   # - errors
