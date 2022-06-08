@@ -2108,9 +2108,37 @@ https://api.niftyapi.xyz/zora/ask/collection/:collection</p>
 </tr>
 </tbody></table>
 <h1 id='parameters'>Parameters</h1><h2 id='search-query'>Search query</h2>
-<p>search query</p>
-<h2 id='attributes'>Attributes</h2>
-<p>The &#39;attributes&#39; query parameter to used to filter returned NFTs by query</p>
+<p>The search (&#39;s&#39;) query parameter is used to filter return NFTs by name or id. Any name or id that contains the query parameter string will be returned.</p>
+
+<p>e.g. s=25 will return any NFT with id and name that contains &#39;25&#39;</p>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">collection</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d</span><span class="dl">"</span>
+<span class="kd">let</span> <span class="nx">searchString</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">5555</span><span class="dl">"</span>
+<span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">`https://api.niftyapi.xyz/collection/nfts/</span><span class="p">${</span><span class="nx">collection</span><span class="p">}</span><span class="s2">?s=</span><span class="p">${</span><span class="nx">searchString</span><span class="p">}</span><span class="s2">`</span>
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"nfts"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"token_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5555"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"external_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gateway.ipfs.io/ipfs/QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq/5555"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.niftyapi.xyz/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/5555"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\"</span><span class="s2">Fur</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Dark Brown</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Hat</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Army Hat</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Eyes</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Bored</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Mouth</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Bored Unshaven Cigarette</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Clothes</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Black Suit</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Earring</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Silver Hoop</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Background</span><span class="se">\"</span><span class="s2">=&gt;</span><span class="se">\"</span><span class="s2">Yellow</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"image_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xeab974fae1582aa8707586b836c7b6313c47992f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-24T08:08:58.779Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-22T23:22:48.112Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"latest_block_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14826194"</span><span class="w">
+   </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='attributes'>Attributes</h2>
+<p>The &#39;attributes&#39; query parameter is used to filter returned NFTs by query</p>
 
 <p>A URI encoded json object value should be passed for attribute query parameter</p>
 
