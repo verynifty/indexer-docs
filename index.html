@@ -384,6 +384,14 @@
               </ul>
           </li>
           <li>
+            <a href="#stats" class="toc-h1 toc-link" data-title="Stats">Stats</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-nfts-trading-data" class="toc-h2 toc-link" data-title="Get NFTs trading data">Get NFTs trading data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#parameters" class="toc-h1 toc-link" data-title="Parameters">Parameters</a>
               <ul class="toc-list-h2">
                   <li>
@@ -2105,6 +2113,191 @@ https://api.niftyapi.xyz/zora/ask/collection/:collection</p>
 <tr>
 <td>collection</td>
 <td>Collection address to retrieve activity from</td>
+</tr>
+</tbody></table>
+<h1 id='stats'>Stats</h1><h2 id='get-nfts-trading-data'>Get NFTs trading data</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">nfts</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">https://api.niftyapi.xyz/trades/collections?orderBy=volume_day&amp;page=1&amp;perPage=1</span><span class="dl">"</span>
+<span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"collections"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x659a4bdaaacc62d2bd9cb18225d9c89b5b697a5a"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transfers_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30748"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"supply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6666"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owners"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3113"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transfers_daily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30595"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"receivers_daily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12253"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"senders_daily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10450"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transfers_hourly"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3545"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"receivers_hourly"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1698"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"senders_hourly"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1886"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"trades_current_day"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1275.90534558</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"trades"</span><span class="p">:</span><span class="w"> </span><span class="mi">811</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"min_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.699</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"max_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"median_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.45</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"buyers"</span><span class="p">:</span><span class="w"> </span><span class="mi">589</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sellers"</span><span class="p">:</span><span class="w"> </span><span class="mi">601</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"marketplaces"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"current_collection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x659a4bdaaacc62d2bd9cb18225d9c89b5b697a5a"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"trades_previous_day"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1480.33511319</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"trades"</span><span class="p">:</span><span class="w"> </span><span class="mi">1388</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"min_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.098</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"max_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">69.42</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"median_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.98</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"buyers"</span><span class="p">:</span><span class="w"> </span><span class="mi">935</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sellers"</span><span class="p">:</span><span class="w"> </span><span class="mi">948</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"marketplaces"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"previous_collection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x659a4bdaaacc62d2bd9cb18225d9c89b5b697a5a"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"trades_current_hour"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"trades_previous_hour"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"trades_current_week"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">8589.716710128467</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"trades"</span><span class="p">:</span><span class="w"> </span><span class="mi">12179</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"min_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0325</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"max_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">69.42</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"median_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.59</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"buyers"</span><span class="p">:</span><span class="w"> </span><span class="mi">5197</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sellers"</span><span class="p">:</span><span class="w"> </span><span class="mi">5777</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"marketplaces"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"current_collection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x659a4bdaaacc62d2bd9cb18225d9c89b5b697a5a"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"trades_previous_week"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"trades_current_month"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">8589.716710128467</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"trades"</span><span class="p">:</span><span class="w"> </span><span class="mi">12179</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"min_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0325</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"max_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">69.42</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"median_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.59</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"buyers"</span><span class="p">:</span><span class="w"> </span><span class="mi">5197</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sellers"</span><span class="p">:</span><span class="w"> </span><span class="mi">5777</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"marketplaces"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"current_collection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x659a4bdaaacc62d2bd9cb18225d9c89b5b697a5a"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"trades_previous_month"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"We Are All Going to Die"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WAGDIE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"default_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.niftyapi.xyz/0x659a4bdaaacc62d2bd9cb18225d9c89b5b697a5a/9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"we-are-all-going-to-die-4bdaaacc62d2bd9cb18225d9c89b5b697a5a"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"decimals"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_block_seen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14899270"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">721</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xbf26fb48e19afe3dd99882c84016b8d16aae0636"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-03T20:53:21.389Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"nft_data_base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ipfs://bafybeicpek2u6g7qtnlhrjw6sf54nw7nj3ae2ak5t6smegty2i42j3bvly/__TOKENID__"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"nft_image_base_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_transfer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-03T20:53:21.389Z"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select * from </span><span class="se">\"</span><span class="s2">nft_collection_stats</span><span class="se">\"</span><span class="s2"> left join </span><span class="se">\"</span><span class="s2">collection</span><span class="se">\"</span><span class="s2"> on </span><span class="se">\"</span><span class="s2">nft_collection_stats</span><span class="se">\"</span><span class="s2">.</span><span class="se">\"</span><span class="s2">address</span><span class="se">\"</span><span class="s2"> = </span><span class="se">\"</span><span class="s2">collection</span><span class="se">\"</span><span class="s2">.</span><span class="se">\"</span><span class="s2">address</span><span class="se">\"</span><span class="s2"> order by (trades_current_day-&gt;&gt;'volume')::numeric DESC  NULLS LAST limit 1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"perPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all NFT trading data ordered orderBy parameter</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.niftyapi.xyz/trades/collections?orderBy=volume_day</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderBy</td>
+<td></td>
+<td>The field to sort by</td>
+</tr>
+<tr>
+<td>perPage</td>
+<td>20</td>
+<td>Number of collections to return</td>
+</tr>
+<tr>
+<td>page</td>
+<td>1</td>
+<td>The page (for pagination)</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>orderBy options (mandatory)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>volume_hour</td>
+</tr>
+<tr>
+<td>volume_day</td>
+</tr>
+<tr>
+<td>volume_week</td>
+</tr>
+<tr>
+<td>buyers_hour</td>
+</tr>
+<tr>
+<td>buyers_day</td>
+</tr>
+<tr>
+<td>buyers_week</td>
+</tr>
+<tr>
+<td>sellers_hour</td>
+</tr>
+<tr>
+<td>sellers_day</td>
+</tr>
+<tr>
+<td>sellers_week</td>
+</tr>
+<tr>
+<td>trades_hour</td>
+</tr>
+<tr>
+<td>trades_day</td>
+</tr>
+<tr>
+<td>trades_week</td>
+</tr>
+<tr>
+<td>max_price_hour</td>
+</tr>
+<tr>
+<td>max_price_day</td>
+</tr>
+<tr>
+<td>max_price_week</td>
+</tr>
+<tr>
+<td>min_price_hour</td>
+</tr>
+<tr>
+<td>min_price_day</td>
+</tr>
+<tr>
+<td>min_price_week</td>
+</tr>
+<tr>
+<td>median_price_hour</td>
+</tr>
+<tr>
+<td>median_price_day</td>
+</tr>
+<tr>
+<td>median_price_week</td>
 </tr>
 </tbody></table>
 <h1 id='parameters'>Parameters</h1><h2 id='search-query'>Search query</h2>
