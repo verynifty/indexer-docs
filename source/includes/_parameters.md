@@ -2,11 +2,43 @@
 
 ## Search query
 
-search query
+The search ('s') query parameter is used to filter return NFTs by name or id. Any name or id that contains the query parameter string will be returned.
+
+e.g. s=25 will return any NFT with id and name that contains '25'
+
+```javascript
+const axios = require("axios");
+
+let collection = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+let searchString = "5555"
+let url = `https://api.niftyapi.xyz/collection/nfts/${collection}?s=${searchString}`
+let { data: nfts } = await axios(url);
+```
+
+> Response
+
+```json
+{
+   "nfts": [{
+      "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+      "token_id": "5555",
+      "name": null,
+      "description": null,
+      "external_url": "https://gateway.ipfs.io/ipfs/QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq/5555",
+      "image": "https://media.niftyapi.xyz/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/5555",
+      "attributes": "\"Fur\"=>\"Dark Brown\", \"Hat\"=>\"Army Hat\", \"Eyes\"=>\"Bored\", \"Mouth\"=>\"Bored Unshaven Cigarette\", \"Clothes\"=>\"Black Suit\", \"Earring\"=>\"Silver Hoop\", \"Background\"=>\"Yellow\"",
+      "image_type": 4,
+      "owner": "0xeab974fae1582aa8707586b836c7b6313c47992f",
+      "created_at": "2022-01-24T08:08:58.779Z",
+      "updated_at": "2022-05-22T23:22:48.112Z",
+      "latest_block_number": "14826194"
+   }]
+}
+```
 
 ## Attributes
 
-The 'attributes' query parameter to used to filter returned NFTs by query
+The 'attributes' query parameter is used to filter returned NFTs by query
 
 A URI encoded json object value should be passed for attribute query parameter
 
